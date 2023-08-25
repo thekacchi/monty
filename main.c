@@ -48,6 +48,8 @@ int main(int argc, char *argv[])
 			pint(&stack, line_num);
 		else if (strcmp(token, "pop") == 0)
 			pop(&stack, line_num);
+		else if (strcmp(token, "swap") == 0)
+			swap(&stack, line_num);
 		else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_num, token);
