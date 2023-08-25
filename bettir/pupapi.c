@@ -1,11 +1,11 @@
-#include "monty.h"
+#include "main.h"
 
 /**
  * push - function to oush a value to the stack
  * @stack: the stack
  * @value: to he pushed to stack
  */
-void push(stack_t **stack, int value)
+void push(stack_t ***stack, int value)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 
@@ -23,11 +23,11 @@ void push(stack_t **stack, int value)
 	}
 	else
 	{
-		new_node->next = *stack;
-		(*stack)->prev = new_node;
+		new_node->next = **stack;
+		(**stack)->prev = new_node;
 	}
 
-	*stack = new_node;
+	**stack = new_node;
 }
 
 /**
@@ -35,9 +35,9 @@ void push(stack_t **stack, int value)
  * @stack: the stack
  * @line_num: bumber of lines
  */
-void pall(stack_t **stack, unsigned int line_num)
+void pall(stack_t ***stack, unsigned int line_num)
 {
-	stack_t *current = *stack;
+	stack_t *current = **stack;
 
 	while (current != NULL)
 	{
@@ -52,7 +52,7 @@ void pall(stack_t **stack, unsigned int line_num)
  * @stack: stach to print from
  * @line_num: number of lines
  */
-void pint(stack_t **stack, unsigned int line_num)
+void pint(stack_t ***stack, unsigned int line_num)
 {
 	if (*stack == NULL)
 	{
@@ -60,5 +60,5 @@ void pint(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	printf("%d\n", (*stack)->n);
+	printf("%d\n", (**stack)->n);
 }

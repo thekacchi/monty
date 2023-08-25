@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * main - main entry point
@@ -50,6 +50,10 @@ int main(int argc, char *argv[])
 			pop(&stack, line_num);
 		else if (strcmp(token, "swap") == 0)
 			swap(&stack, line_num);
+		else if (strcmp(token, "add") == 0)
+			add(&stack, line_num);
+		else if (strcmp(token, "nop") == 0)
+			nop(&stack, line_num);
 		else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_num, token);

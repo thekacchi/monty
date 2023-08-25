@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 
 /**
  * freeStack - frees memory in the stack

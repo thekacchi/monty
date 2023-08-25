@@ -34,12 +34,12 @@ typedef struct instruction_s {
 
 void stack_loop(FILE *file, stack_t **stack);
 
-void push(stack_t **stack, int value);
-void pall(stack_t **stack, unsigned int line_num);
-void pint(stack_t **stack, unsigned int line_num);
-void pop(stack_t **stack, unsigned int line_num);
-void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
+void push(stack_t ***stack, int value);
+void pall(stack_t ***stack, unsigned int line_num);
+void pint(stack_t ***stack, unsigned int line_num);
+void pop(stack_t ***stack, unsigned int line_num);
+void swap(stack_t ***stack, unsigned int line_number);
+void add(stack_t ***stack, unsigned int line_number);
 
 void freeStack(stack_t *stack);
 void monty_exit(FILE *file, stack_t *stack);

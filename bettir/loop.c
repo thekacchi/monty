@@ -38,7 +38,7 @@ void stack_loop(FILE *file, stack_t **stack)
 		else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_num, token);
-			monty_exit(file, stack);
+			monty_exit(file, *stack);
 		}
 	}
 
