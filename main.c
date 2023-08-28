@@ -54,6 +54,8 @@ int main(int argc, char *argv[])
 			add(&stack, line_num);
 		else if (strcmp(token, "nop") == 0)
 			nop(&stack, line_num);
+		else if (strcmp(token, "sub") == 0)
+			sub(&stack, line_num);
 		else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_num, token);
