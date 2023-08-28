@@ -60,6 +60,8 @@ int main(int argc, char *argv[])
 			div_m(&stack, line_num);
 		else if (strcmp(token, "mul") == 0)
 			mul_m(&stack, line_num);
+		else if (strcmp(token, "mod") == 0)
+			mod(&stack, line_num);
 		else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_num, token);
