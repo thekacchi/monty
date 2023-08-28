@@ -50,3 +50,22 @@ void pchar(stack_t **stack, unsigned int line_num)
 
 	pop(stack, line_num);
 }
+
+/**
+ * pstr - function to print the string starting at the top of the stack
+ * @stack: the stack
+ * @line_num: line number
+ */
+void pstr(stack_t **stack, unsigned int line_num)
+{
+	stack_t *current = *stack;
+
+	while (current != NULL && current->n != 0 && current->n >= 0 && current->n <= 127)
+	{
+		putchar(current->n);
+		current = current->next;
+	}
+
+	putchar('\n');
+	(void)line_num;
+}

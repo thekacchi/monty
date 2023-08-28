@@ -48,6 +48,7 @@ void div_m(stack_t **stack, unsigned int line_num);
 void mul_m(stack_t **stack, unsigned int line_num);
 void mod(stack_t **stack, unsigned int line_num);
 void pchar(stack_t **stack, unsigned int line_num);
+void pstr(stack_t **stack, unsigned int line_num);
 
 void freeStack(stack_t *stack);
 void monty_exit(FILE *file, stack_t *stack);
