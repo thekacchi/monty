@@ -25,7 +25,7 @@ void sub(stack_t **stack, unsigned int line_num)
  */
 void div_m(stack_t **stack, unsigned int line_num)
 {
-	if (*stack ==NULL || (*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't div, stack too short\n", line_num);
 		exit(EXIT_FAILURE);
@@ -38,5 +38,22 @@ void div_m(stack_t **stack, unsigned int line_num)
 	}
 
 	(*stack)->next->n /= (*stack)->n;
+	pop(stack, line_num);
+}
+
+/**
+ * mul_m - function multiplies the second top element with the top element
+ * @stack: the stack
+ * @line_num: the line number
+ */
+void mul_m(stack_t **stack, unsigned int line_num)
+{
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	(*stack)->next->n *= (*stack)->n;
 	pop(stack, line_num);
 }
