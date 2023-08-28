@@ -66,6 +66,8 @@ int main(int argc, char *argv[])
 			pchar(&stack, line_num);
 		else if (strcmp(token, "pstr") == 0)
 			pstr(&stack, line_num);
+		else if (strcmp(token, "rotl") == 0)
+			rotl(&stack, line_num);
 		else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_num, token);
